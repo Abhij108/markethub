@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketHub - Multi Vendor Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="toast-container"></div>
+
+<!-- AUTH SCREEN -->
+<section id="auth-screen" class="screen">
+  <div class="auth-layout">
+    <div class="auth-brand">
+      <div class="brand-mark">M</div>
+      <p class="eyebrow">MULTI-VENDOR MARKETPLACE</p>
+      <h1>Shop from<br><span>every vendor.</span></h1>
+      <p class="hero-copy">Discover products, manage your cart and place orders from one simple marketplace.</p>
+      <div class="flow">
+        <span>Sign in</span><b>→</b><span>Vendors</span><b>→</b><span>Products</span><b>→</b><span>Order</span>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div class="tabs">
+        <button class="tab active" data-auth="login">Sign In</button>
+        <button class="tab" data-auth="signup">Create Account</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <h2>Welcome back</h2>
+        <p class="muted">Sign in to access your marketplace dashboard.</p>
+        <label>Username<input id="login-username" required placeholder="Enter username"></label>
+        <label>Password<input id="login-password" type="password" required placeholder="Enter password"></label>
+        <button class="primary-btn" type="submit">Sign In</button>
+      </form>
+
+      <form id="signup-form" class="auth-form hidden">
+        <h2>Create your account</h2>
+        <p class="muted">Create your customer account to start shopping.</p>
+        <div class="two">
+          <label>Name<input id="signup-name" required></label>
+          <label>Phone<input id="signup-phone" required></label>
+        </div>
+        <label>Email<input id="signup-mail" type="email" required></label>
+        <label>Address<textarea id="signup-address" rows="2" required></textarea></label>
+        <div class="two">
+          <label>Username<input id="signup-username" required></label>
+          <label>Password<input id="signup-password" type="password" required></label>
+        </div>
+        <button class="primary-btn" type="submit">Create Account</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- APP -->
+<section id="app-screen" class="screen hidden">
+  <header class="navbar">
+    <a class="logo" href="#" data-page="dashboard"><span>M</span> MarketHub</a>
+    <div class="nav-actions">
+      <button class="nav-link" data-page="dashboard">Vendors</button>
+      <button class="nav-link" data-page="search">Search</button>
+      <button class="cart-button" data-page="cart">🛒 Cart <b id="cart-count">0</b></button>
+      <div class="profile-menu">
+        <button id="profile-btn" class="profile-btn"><span id="profile-avatar">A</span><span id="profile-name">User</span>⌄</button>
+        <div id="profile-dropdown" class="dropdown hidden">
+          <div class="dropdown-user"><strong id="dropdown-name">User</strong><small id="dropdown-email"></small></div>
+          <button data-page="profile">My Profile</button>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- DASHBOARD -->
+    <div id="dashboard-page" class="page">
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">DASHBOARD</span>
+          <h1>Welcome, <span id="welcome-name">User</span></h1>
+          <p class="muted">Choose a vendor to explore available products.</p>
+        </div>
+        <div class="stats">
+          <div><strong id="vendor-count">0</strong><small>Vendors</small></div>
+          <div><strong id="product-count">0</strong><small>Products</small></div>
+          <div><strong id="dashboard-cart-count">0</strong><small>Cart Items</small></div>
+        </div>
+      </div>
+
+      <form id="dashboard-search" class="search-box">
+        <span>⌕</span><input id="dashboard-search-input" placeholder="Search products by name or description...">
+        <button>Search</button>
+      </form>
+
+      <div class="section-heading"><h2>Available Vendors</h2><span id="vendor-label">0 vendors</span></div>
+      <div id="vendors-grid" class="vendor-grid"></div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div id="products-page" class="page hidden">
+      <button class="back-btn" data-page="dashboard">← Back to vendors</button>
+      <div class="page-heading product-heading">
+        <div>
+          <span class="eyebrow">VENDOR</span>
+          <h1 id="vendor-title">Vendor</h1>
+          <p class="muted" id="vendor-details"></p>
+        </div>
+        <button class="primary-btn small" data-page="cart">View Cart (<span class="cart-count-inline">0</span>)</button>
+      </div>
+      <div class="section-heading"><h2>Products</h2><span id="product-label"></span></div>
+      <div id="products-grid" class="product-grid"></div>
+    </div>
+
+    <!-- SEARCH -->
+    <div id="search-page" class="page hidden">
+      <div class="page-heading">
+        <div><span class="eyebrow">SEARCH</span><h1>Find products</h1><p class="muted">Search products by name or description.</p></div>
+      </div>
+      <form id="search-form" class="search-box">
+        <span>⌕</span><input id="search-input" placeholder="Search products..."><button>Search</button>
+      </form>
+      <div id="search-results" class="product-grid"></div>
+    </div>
+
+    <!-- CART -->
+    <div id="cart-page" class="page hidden">
+      <div class="page-heading">
+        <div><span class="eyebrow">YOUR CART</span><h1>Shopping Cart</h1><p class="muted">Review your items before placing the order.</p></div>
+      </div>
+      <div id="cart-content"></div>
+    </div>
+
+    <!-- PROFILE -->
+    <div id="profile-page" class="page hidden">
+      <div class="page-heading"><div><span class="eyebrow">ACCOUNT</span><h1>My Profile</h1><p class="muted">Your customer information.</p></div></div>
+      <div id="profile-card" class="profile-card"></div>
+    </div>
+  </main>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

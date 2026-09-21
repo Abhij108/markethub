@@ -1,3 +1,4 @@
+
 # MarketHub — Multi-Vendor Marketplace
 
 MarketHub is a multi-vendor marketplace project built with **HTML, CSS, JavaScript, Python, and MySQL**.
@@ -144,7 +145,7 @@ The overall application flow is:
 # 2. Authentication Workflow
 
 ## Sign Up
-
+<img width="1781" height="803" alt="Screenshot From 2026-09-21 23-09-51" src="https://github.com/user-attachments/assets/0f8e6822-2d4f-4e87-9c31-4bb118c3533b" />
 The signup form collects:
 
 ```text
@@ -178,6 +179,7 @@ customer
 ```
 
 ## Sign In
+<img width="1781" height="803" alt="Screenshot From 2026-09-21 23-04-16" src="https://github.com/user-attachments/assets/9a5d0483-f0da-4c28-ab8c-a94d063cc676" />
 
 The sign-in form accepts:
 
@@ -234,6 +236,7 @@ The frontend renders the vendor cards dynamically using JavaScript.
 ---
 
 # 4. Vendor Workflow
+<img width="1888" height="865" alt="Screenshot From 2026-09-21 22-47-01" src="https://github.com/user-attachments/assets/c2de4669-37da-4831-91f6-cc1c28047a8f" />
 
 The current demo contains four vendors:
 
@@ -276,6 +279,8 @@ JavaScript filters products using the vendor ID and displays products belonging 
 ---
 
 # 5. Product Workflow
+<img width="1888" height="865" alt="Screenshot From 2026-09-21 22-46-28" src="https://github.com/user-attachments/assets/cec57cd6-2e4c-4983-b8f1-e9e5ac1691ca" />
+
 
 The demo product catalog contains products from Samsung, Godrej, HP, and Intel.
 
@@ -371,6 +376,7 @@ vendorsid
 ---
 
 # 8. Cart Workflow
+<img width="1781" height="803" alt="Screenshot From 2026-09-21 22-48-10" src="https://github.com/user-attachments/assets/bb357dcf-6a52-44e8-978d-9d3509ffbe6e" />
 
 The cart displays:
 
